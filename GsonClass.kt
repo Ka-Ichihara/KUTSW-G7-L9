@@ -20,6 +20,12 @@ open class ele2(): gsonData() {
     var text2: String = ""
 }
 
+open class ele4(): gsonData() {
+    var text1: String = "" //user_name
+    var text2: String = "" //mailaddress
+    var text3: String = "" //password
+    var text4: String = "" //birthday
+}
 
 open class ele5(): gsonData() {
     var text1: String = "" //user_id
