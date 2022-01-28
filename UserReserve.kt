@@ -20,11 +20,11 @@ class UserReserve {
         var resString: String = ""
         runBlocking{
             async {
-                //resString = PostConnect().startPostRequest(insRsv, "registerNreceived.php")
+                resString = PostConnect().startPostRequest(insRsv, "registerNreceived.php")
             }.await()
         }
         val resJsonStr: retStr = Gson().fromJson(resString, retStr::class.java)
-        if(resJsonStr.result == "削除できません.") return false
+        if(resJsonStr.result == "挿入できません.") return false
 
         return true
     }
@@ -37,7 +37,7 @@ class UserReserve {
         var resString: String = ""
         runBlocking{
             async {
-                //resString =  PostConnect().startPostRequest(delRsv, "deleteNreceived.php")
+                resString =  PostConnect().startPostRequest(delRsv, "deleteNreceived.php")
             }.await()
         }
         val resJsonStr: retStr = Gson().fromJson(resString, retStr::class.java)
@@ -53,7 +53,7 @@ class UserReserve {
         var resString: String = ""
         runBlocking{
             async {
-                //resString =  PostConnect().startPostRequest(delRsv, "deleteOrdered.php")
+                resString =  PostConnect().startPostRequest(delRsv, "deleteOrdered.php")
             }.await()
         }
         val resJsonStr: retStr = Gson().fromJson(resString, retStr::class.java)
@@ -89,7 +89,7 @@ class UserReserve {
     }
 
     //利用者番号に対応した受注済みリストの返却
-    fun listOrderedReseve(userNum: String): Array<Array<String?>> {
+    fun listOrderedReserve(userNum: String): Array<Array<String?>> {
         val ele1 = ele1()
         ele1.text1 = userNum
 
@@ -113,7 +113,6 @@ class UserReserve {
 
     //予約番号に対応した乗車位置と担当タクシーの位置情報, 遅延情報を返す
     fun infoDispatch(reserveNum: String): Array<String> {
-        //val orderedData: Array<String> = DB().searchOrdered(reserveNum)
         val ele1 = ele1()
         ele1.text1 = reserveNum
 
@@ -135,9 +134,6 @@ class UserReserve {
 
         val retArray = arrayOf(resJsonStr.START_LAT, resJsonStr.START_LNG, resJsonStr2.DRIVER_GPS_LAT, resJsonStr2.DRIVER_GPS_LNG, resJsonStr.DEDAY)
         return retArray
-
-        //val taxiData: Array<String> = DB().searchOrderedDriver(orderedData[1])
-
     }
 
 
