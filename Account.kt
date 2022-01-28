@@ -67,13 +67,11 @@ class Account {
 
     //アカウント登録用メソッド
     fun createAcc(name: String, mail: String, pass: String, bd: String): Boolean {
-        //DB().registerUserAccount(利用者番号, name, mail, pass, bd)
-        val cAcc = ele5()
-        cAcc.text1 = "利用者番号"
-        cAcc.text2 = name
-        cAcc.text3 = mail
-        cAcc.text4 = pass
-        cAcc.text5 = bd
+        val cAcc = ele4()
+        cAcc.text1 = name
+        cAcc.text2 = mail
+        cAcc.text3 = pass
+        cAcc.text4 = bd
         var resString: String = ""
         runBlocking{
             async {
@@ -143,7 +141,6 @@ class Account {
 
     //アカウントの削除
     fun delAcc(userNum: String): Boolean{
-        //DB().deleteUserAccount(userNum)
         val login = ele1()
         login.text1 = userNum
 
