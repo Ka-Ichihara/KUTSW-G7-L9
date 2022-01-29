@@ -60,9 +60,8 @@ open class retList2(): gsonData() {
 
 open class retDriver(): gsonData() {
     var DRIVER_ID: String = ""
-    var DRIVER_GPS_LAT: String = ""
-    var DRIVER_GPS_LNG: String = ""
-    var TAXI_STATUS: String = ""
+    var GPS_LAT: String = ""
+    var GPS_LNG: String = ""
 }
 
 open class retComp(): gsonData() {
