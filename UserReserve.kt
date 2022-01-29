@@ -132,7 +132,7 @@ class UserReserve {
         }
         val resJsonStr2: retDriver = Gson().fromJson(resString, retDriver::class.java)
 
-        val retArray = arrayOf(resJsonStr.START_LAT, resJsonStr.START_LNG, resJsonStr2.DRIVER_GPS_LAT, resJsonStr2.DRIVER_GPS_LNG, resJsonStr.DEDAY)
+        val retArray = arrayOf(resJsonStr.START_LAT, resJsonStr.START_LNG, resJsonStr2.GPS_LAT, resJsonStr2.GPS_LNG, resJsonStr.DEDAY)
         return retArray
     }
 
